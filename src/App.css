@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:ital,wght@0,500;0,600;1,700;1,800&family=Roboto:wght@300&family=Tilt+Neon&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins";
+    background-color: #141414;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+.flexSB{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container{
+    max-width: 90%;
+    margin: auto;
+}
+button{
+    background-color: #e50813;
+    outline: none;
+    border: none;
+    color : #fff;
+    padding: 12px 40px;
+    font-weight: 700;
+    font-size: 17px;
+}
+.row{
+    width: 50%;
+}
+p{
+    line-height: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex{
+    display: flex;
+}
+.control-btn button{
+    background: none;
+    padding: 0;
+    width: 55px;
+    height: 55px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.control-btn .next{
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    z-index: 99;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.control-btn .prev{
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    z-index: 99;
+}
+.heading h1{
+    font-style: 400px; 
+    margin: 50px 0 30px 40px;
+}
+.heading a{
+    color: #e50813;
+}
+.MovieBox{
+    width: 80%;
+    height: 400px;
+    max-width: 430px;
+    position: relative;
+    transition: 0.5s;
+    border-left: 5px solid transparent;
+    color: #fff;
+    margin: auto;
+}
+.MovieBox:hover{
+    cursor: pointer;
+    border-left: 5px solid #e50813 ;
+    transform: scale3d(1.2, 1.2, 1.1) translate3d(3%, 0, 0) perspective(0.25em);
+    box-shadow: 0 0 0.73em rgba(0, 0, 0, 0.9);
+}
+.MovieBox::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 400px;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9)0%  ,rgba(0, 0, 0, 0.5)40%  ,rgba(0, 0, 0, 0.1)100%);
+
+}
+.MovieBox img{
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: -2;
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
+     border-radius: 10px;
+}
+.MovieBox .text{
+    padding: 70px 50px;
+
+
+}
+.MovieBox h3{
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.MovieBox button{
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-style: 13px;
+    cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media only screen and (max-width: 768px){
+    .MovieBox{
+        width: 250px;
+        height: 300px;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    }   
 }

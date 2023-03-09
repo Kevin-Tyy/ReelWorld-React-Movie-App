@@ -1,0 +1,145 @@
+.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10vh;
+  width: 100%;
+  color: #fff;
+}
+.homeContainer {
+  position: relative;
+}
+.coverImage {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+}
+.coverImage img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.homeContainer .content {
+  padding: 100px;
+}
+
+.homeContainer h1 {
+  margin-top: 80px;
+  font-size: 90px;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-image: url(../../../public/images/texure.jpg);
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+.coverImage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 88;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0)
+  );
+}
+.homeContainer .rating {
+  margin: 30px 0;
+}
+.homeContainer .cast {
+  margin: 30px 0;
+}
+.cast span {
+  color: #e50813;
+}
+.rating .icons {
+  color: #e50813;
+  margin-right: 5px;
+}
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playButton .img {
+  position: relative;
+}
+.change {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+.playButton img {
+  width: 90px;
+  height: 90px;
+  margin-right: 20px;
+  transition: 0.5s;
+}
+.playButton button:hover .change {
+  opacity: 1;
+  cursor: pointer;
+}
+.playButton button:hover .static{
+  opacity: 0;
+} 
+.playButton button {
+  padding: 0;
+  background: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.margin {
+  margin-top: 40%;
+}
+
+.primary-btn {
+  border-radius: 10px;
+  height: 50px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+    .homeContainer h1{
+      font-style: 50px;
+      margin: 0;
+    }
+    .home{
+      position: relative;
+      margin: 0;
+      height: 60vh !important;
+    }
+    .coverImage{
+      width: 10vw;
+      height: 70vh !important;
+    }
+    .home .row{
+      width: 100%;
+
+    }
+    .home .playButton{
+      display: none;
+    }
+    .margin{
+      margin-top: 0 !important;
+    }
+}
